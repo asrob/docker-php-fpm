@@ -1,4 +1,4 @@
 #!/bin/bash
 set -e
 
-exec /usr/sbin/php-fpm7.1 -F
+exec /usr/sbin/php-fpm7.2 -F
