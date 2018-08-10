@@ -32,8 +32,8 @@ RUN add-apt-repository ppa:ondrej/php -y && \
   && chown www-data:www-data /run/php \
   && mkdir /var/log/php \
   && chown www-data:www-data /var/log/php \
-  && groupmod -g 1003 www-data \
-  && usermod -u 1003 www-data
+  && groupmod -g 1000 www-data \
+  && usermod -u 1000 www-data
 
 RUN sed -i -e "s/;pm.status_path = \/status/pm.status_path = \/php_status/" /etc/php/7.2/fpm/pool.d/www.conf && \
  sed -i -e "s/;date.timezone =/date.timezone = Europe\/Budapest/" /etc/php/7.2/fpm/php.ini && \
