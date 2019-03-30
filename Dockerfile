@@ -51,6 +51,5 @@ RUN sed -i -e "s/;pm.status_path =/pm.status_path =/" /etc/php/7.2/fpm/pool.d/ww
  chmod +x /usr/bin/drush
 
 COPY etc /etc
-COPY usr /usr
 
 EXPOSE 9000
