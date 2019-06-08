@@ -47,7 +47,7 @@ RUN sed -i -e "s/;pm.status_path =/pm.status_path =/" /etc/php/7.2/fpm/pool.d/ww
  sed -i -e 's/max_execution_time = 30/max_execution_time = 300/' /etc/php/7.2/fpm/php.ini && \
  sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize = 200M/' /etc/php/7.2/fpm/php.ini && \
  sed -i -e 's/post_max_size = 8M/post_max_size = 200M/' /etc/php/7.2/fpm/php.ini && \
- curl -L -o /usr/bin/drush https://github.com/drush-ops/drush/releases/download/8.1.18/drush.phar && \
+ curl -L -o /usr/bin/drush https://github.com/drush-ops/drush/releases/download/8.2.3/drush.phar && \
  chmod +x /usr/bin/drush
 
 COPY etc /etc
