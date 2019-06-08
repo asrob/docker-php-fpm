@@ -1,7 +1,7 @@
 # We absolutely NEED a sendmail binary, even if it doesn't work, otherwise the mail() function will cause weird stuff to happen.
 FROM ivdev/nullmailer:18.04
 
-ARG PACKAGEVERSION=7.2.16-1+ubuntu18.04.1+deb.sury.org+1
+ARG PACKAGEVERSION=7.2.19-1+ubuntu18.04.1+deb.sury.org+1
 RUN add-apt-repository ppa:ondrej/php -y && \
   apt-get update -y && \
   apt-get install -y \
@@ -47,7 +47,7 @@ RUN sed -i -e "s/;pm.status_path =/pm.status_path =/" /etc/php/7.2/fpm/pool.d/ww
  sed -i -e 's/max_execution_time = 30/max_execution_time = 300/' /etc/php/7.2/fpm/php.ini && \
  sed -i -e 's/upload_max_filesize = 2M/upload_max_filesize = 200M/' /etc/php/7.2/fpm/php.ini && \
  sed -i -e 's/post_max_size = 8M/post_max_size = 200M/' /etc/php/7.2/fpm/php.ini && \
- curl -L -o /usr/bin/drush https://github.com/drush-ops/drush/releases/download/8.1.18/drush.phar && \
+ curl -L -o /usr/bin/drush https://github.com/drush-ops/drush/releases/download/8.2.3/drush.phar && \
  chmod +x /usr/bin/drush
 
 COPY etc /etc
