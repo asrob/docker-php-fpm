@@ -1,4 +1,17 @@
-version: 2
+version: 2.1
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - build
+  weekly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * 1"
+          filters:
+            branches:
+              only:
+                - master
 jobs:
   build:
     machine:
@@ -6,5 +19,5 @@ jobs:
     steps:
       - checkout
       - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run: docker build -t asrob/ubuntu-php-fpm:7.2.16 .
-      - run: docker push asrob/ubuntu-php-fpm:7.2.16
+      - run: docker build -t asrob/ubuntu-php-fpm:7.2.19 .
+      - run: docker push asrob/ubuntu-php-fpm:7.2.19

@@ -1,7 +1,7 @@
 # We absolutely NEED a sendmail binary, even if it doesn't work, otherwise the mail() function will cause weird stuff to happen.
 FROM ivdev/nullmailer:18.04
 
-ARG PACKAGEVERSION=7.2.16-1+ubuntu18.04.1+deb.sury.org+1
+ARG PACKAGEVERSION=7.2.19-1+ubuntu18.04.1+deb.sury.org+1
 RUN add-apt-repository ppa:ondrej/php -y && \
   apt-get update -y && \
   apt-get install -y \
